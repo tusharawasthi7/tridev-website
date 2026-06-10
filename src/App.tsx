@@ -29,48 +29,6 @@ export default function App() {
   
 const [selectedService, setSelectedService] = useState<string | null>(null);
 
-const services = [
-  {
-    title: "Turnkey EPC Projects",
-    desc: "Complete Engineering, Procurement & Construction solutions delivered from concept to completion.",
-  },
-  {
-    title: "Structural Works",
-    desc: "Durable structural construction aligned with modern engineering standards.",
-  },
-  {
-    title: "Finishing Works",
-    desc: "Premium interior and exterior finishing solutions.",
-  },
-  {
-    title: "MEP Services",
-    desc: "Mechanical, Electrical & Plumbing solutions for efficient operations.",
-  },
-  {
-    title: "Medical Infrastructure",
-    desc: "Construction solutions for hospitals and healthcare facilities.",
-  },
-  {
-    title: "Renewable Energy",
-    desc: "Solar and sustainable energy infrastructure.",
-  },
-  {
-    title: "Furniture Supply",
-    desc: "Office and medical furniture solutions.",
-  },
-  {
-    title: "Facility Management",
-    desc: "Maintenance and operational support services.",
-  },
-  {
-    title: "Property Consultancy",
-    desc: "Investment and development advisory.",
-  },
-  {
-    title: "Water & Wastewater Treatment Systems",
-    desc: "Advanced treatment, recycling and sustainable water management solutions for industrial, commercial and institutional projects.",
-  },
-];
 
   const images = [
   pic1, pic2, pic3, pic4, pic5,
