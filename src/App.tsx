@@ -155,6 +155,48 @@ useEffect(() => {
     work: "Internal Plumbing – M3M Soulitude",
     value: "₹2.48 Cr",
   },
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of HVAC Work – Bongaigaon Medical College & Hospital",
+  value: "₹9.25 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of ELV Work – Bongaigaon Medical College & Hospital",
+  value: "₹15 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side Electrical Work – Bongaigaon Medical College & Hospital",
+  value: "₹7.62 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side Electrical Work – 5000 Seating Capacity Public Auditorium",
+  value: "₹3.42 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side HVAC Work – 5000 Seating Capacity Public Auditorium",
+  value: "₹9 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side HVAC Work – Open Stadium, Amingaon, Assam",
+  value: "₹5.25 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side HVAC Work – Lachit Moidam Memorial Cultural Complex, Jorhat, Assam",
+  value: "₹1.78 Cr",
+},
+{
+  client: "Ahluwalia Contracts India Ltd.",
+  work: "SITC of Low Side & High Side HVAC Work – Lachit Moidam Memorial Cultural Complex, Jorhat, Assam",
+  value: "₹48 Lacs",
+},
+
+
 ];
 
   return (
