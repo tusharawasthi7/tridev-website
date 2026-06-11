@@ -42,16 +42,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full z-50 bg-black/60 backdrop-blur-md text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
 
         {/* Logo */}
-        <a href="#home" className="flex items-center">
+       <a href="#home" className="flex items-center">
   <img
     src={logo}
     alt="Tridev Technocrafts"
-    className="h-16 w-auto"
+    className="h-24 w-auto"
   />
-</a>
+</a>  
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg items-center">
