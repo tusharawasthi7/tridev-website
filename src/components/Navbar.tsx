@@ -1,3 +1,4 @@
+
 import logo from "../assets/logo.png";
 import { useEffect, useState } from "react";
 
@@ -36,25 +37,29 @@ export default function Navbar() {
   }, []);
 
   const linkClass = (id: string) =>
-    `hover:text-yellow-400 transition ${
-      active === id ? "text-yellow-400 font-semibold" : ""
-    }`;
+  `transition-all duration-300 ${
+    active === id
+      ? "text-orange-400 font-semibold"
+      : "text-white hover:text-orange-400"
+  }`;
 
   return (
-    <nav className="fixed w-full z-50 bg-black/60 backdrop-blur-md text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#020617]/95 backdrop-blur-xl text-white border-b border-white/10 shadow-xl">
+
+      {/* Orange Accent Line */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-orange-500"></div>
+
+     <div className="max-w-[1400px] mx-auto px-8 h-16 flex justify-between items-center">
 
         {/* Logo */}
-       <a href="#home" className="flex items-center">
-  <img
-    src={logo}
-    alt="Tridev Technocrafts"
-    className="h-24 w-auto"
-  />
-</a>  
+        <img
+  src={logo}
+  alt="Tridev Technocrafts"
+  className="h-10 md:h-16 w-auto transition duration-300 hover:scale-105"
+/>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-lg items-center">
+       <ul className="hidden md:flex gap-12 text-[16px] font-medium items-center">
 
           <li>
             <a href="#home" className={linkClass("home")}>
@@ -73,7 +78,7 @@ export default function Navbar() {
               <span className="text-xs">▼</span>
             </a>
 
-            <div className="absolute top-full left-0 mt-2 w-52 bg-white text-black rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+           <div className="absolute top-full left-0 mt-3 w-56 bg-white text-slate-900 rounded-xl shadow-2xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 
               <a
                 href="#leadership"
@@ -115,7 +120,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-2xl"
+          className="md:hidden text-3xl text-white"
         >
           ☰
         </button>
@@ -124,7 +129,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black px-6 pb-4">
+        <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-white/10 px-6 py-5">
 
           <ul className="flex flex-col gap-4 text-lg">
 

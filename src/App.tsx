@@ -203,14 +203,16 @@ useEffect(() => {
     <>
       <Navbar />
 
-      <div className="pt-24 font-sans">
+    <div className="pt-16 font-sans">
 
         {/* HERO */}
-        <section id="home" className="scroll-mt-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-orange-900 text-white">
-
+       <section
+  id="home"
+  className="scroll-mt-24 relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-orange-900 text-white"
+>
           <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600')] bg-cover bg-center" />
 
-          <div className="relative max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-12 items-center">
+     <div className="relative max-w-7xl mx-auto px-10 lg:px-12 py-16 grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
 
             {/* LEFT */}
             <div>
@@ -248,8 +250,8 @@ useEffect(() => {
                 ["2012", "Serving diversified sectors since"],
                 ["Pan India", "Project execution capability"],
               ].map(([title, desc]) => (
-                <div key={title} className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10">
-                  <h3 className="text-4xl font-bold text-orange-400">{title}</h3>
+                <div key={title} className="bg-white/10 backdrop-blur-md p-5 rounded-3xl border border-white/10">
+                  <h3 className="text-3xl font-bold text-orange-400">{title}</h3>
                   <p className="mt-2 text-gray-200">{desc}</p>
                 </div>
               ))}
@@ -261,7 +263,7 @@ useEffect(() => {
       {/* ABOUT */}
 <section
   id="about"
-  className="scroll-mt-24 bg-white py-28 px-6"
+ className="scroll-mt-24 bg-white py-24 px-6"
 >
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
@@ -366,7 +368,7 @@ useEffect(() => {
 
             <div className="mt-14 grid lg:grid-cols-2 gap-8">
               {projects.map((p) => (
-                <div key={p.client} className="bg-white border rounded-3xl p-8 hover:shadow-xl transition">
+                <div key={p.client} className="bg-white border rounded-3xl p-6 hover:shadow-xl transition">
                   <div className="flex justify-between">
                     <div>
                       <h3 className="text-xl font-bold">{p.client}</h3>
@@ -399,11 +401,11 @@ useEffect(() => {
 
   {/* TOP CENTER CARD */}
   <div className="flex justify-center mb-10">
-    <div className="max-w-3xl bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-10 hover:shadow-2xl transition">
+    <div className="max-w-4xl bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-10 hover:shadow-2xl transition">
       <h3 className="text-2xl font-bold">Hemant Kumar</h3>
       <p className="text-orange-400 mt-2">Managing Director</p>
       <p className="mt-6 text-gray-300 leading-relaxed">
-        Graduate Engineer and MBA professional with 21+ years of experience in
+        Graduate Engineer and MBA professional with 26+ years of experience in
         design, planning, tendering, billing, quality auditing, and execution
         of multidisciplinary projects. Expertise spans Civil, Structural,
         Interior, MEP, Electrical, Fire Fighting, Plumbing, HVAC,
@@ -691,39 +693,42 @@ service.title === "Structural Works" || service.title === "Finishing Works"
 </section>
 
 <section id="gallery" className="scroll-mt-24 bg-black py-24 px-6">
-  <div className="max-w-5xl mx-auto text-center">
+  <div className="max-w-6xl mx-auto text-center">
 
-    <h2 className="text-4xl font-bold text-white">
+    <p className="text-orange-500 uppercase tracking-[0.2em]">
+      Project Showcase
+    </p>
+
+    <h2 className="mt-3 text-4xl md:text-5xl font-black text-white">
       Project Gallery
     </h2>
 
-    <div className="mt-12 relative">
+    <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+      A glimpse into our Civil, MEP, Infrastructure and Engineering projects
+      delivered across India.
+    </p>
 
+    <div className="mt-12">
       <img
         src={images[current]}
-        className="w-full h-[450px] object-cover rounded-3xl"
+        alt="Project"
+        className="w-full h-[550px] object-cover rounded-3xl shadow-2xl border border-white/10"
       />
+    </div>
 
-      {/* LEFT */}
-      <button
-        onClick={() =>
-          setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-        }
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 px-3 py-2 rounded-full text-white"
-      >
-        ◀
-      </button>
-
-      {/* RIGHT */}
-      <button
-        onClick={() =>
-          setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-        }
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 px-3 py-2 rounded-full text-white"
-      >
-        ▶
-      </button>
-
+    {/* Navigation Dots */}
+    <div className="flex justify-center gap-3 mt-8">
+      {images.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrent(index)}
+          className={`h-3 w-3 rounded-full transition-all duration-300 ${
+            current === index
+              ? "bg-orange-500 scale-125"
+              : "bg-white/30 hover:bg-white/60"
+          }`}
+        />
+      ))}
     </div>
 
   </div>
@@ -1353,11 +1358,80 @@ service.title === "Structural Works" || service.title === "Finishing Works"
 
 
         {/* CONTACT */}
-        <section id="contact" className="scroll-mt-24 bg-orange-500 text-white py-20 text-center">
-          <h2 className="text-4xl font-bold">Contact Us</h2>
-          <p className="mt-4">A-161, Gulab Bagh, New Delhi</p>
-        </section>
+       <section
+  id="contact"
+  className="scroll-mt-24 bg-slate-950 text-white py-20"
+>
+  <div className="max-w-7xl mx-auto px-6">
 
+    <div className="text-center mb-14">
+      <h2 className="text-4xl md:text-5xl font-bold">
+        Contact Us
+      </h2>
+
+      <div className="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+
+      <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+        Let's discuss your next Civil, MEP, Infrastructure or Facility
+        Management project.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+        <h3 className="text-orange-400 text-xl font-semibold mb-4">
+          Office Address
+        </h3>
+
+        <p className="text-gray-300 leading-7">
+          Tridev Technocrafts Pvt. Ltd.
+          <br />
+          New Delhi, India
+        </p>
+      </div>
+
+     <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+  <h3 className="text-orange-400 text-xl font-semibold mb-4">
+    Contact Emails
+  </h3>
+
+  <div className="space-y-2 text-gray-300 text-sm md:text-base break-all">
+    <p>hemant.baaliyan@tridevtechno.in</p>
+     <p>dheerendra.awasthi@tridevtechno.in</p>
+    <p>rohit.saha@tridevtechno.in</p>
+    <p>vipin.gupta@tridevtechno.in</p>
+    <p>sikadar.singh@tridevtechno.in</p>
+   
+  </div>
+</div>
+
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+        <h3 className="text-orange-400 text-xl font-semibold mb-4">
+          Phone
+        </h3>
+
+        <p className="text-gray-300">
+          +91 88004 78999
+        </p>
+      </div>
+
+    </div>
+
+    <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p className="text-gray-500 text-sm">
+        © {new Date().getFullYear()} Tridev Technocrafts Pvt. Ltd.
+      </p>
+
+      <p className="text-gray-500 text-sm">
+        Engineering • Construction • Infrastructure
+      </p>
+
+    </div>
+
+  </div>
+</section>
       </div>
     </>
   );
