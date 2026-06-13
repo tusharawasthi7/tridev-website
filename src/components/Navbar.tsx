@@ -5,36 +5,48 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
-
+const [showNavbar, setShowNavbar] = useState(true);
   useEffect(() => {
-    const sections = [
-      "home",
-      "about",
-      "leadership",
-      "projects",
-      "services",
-      "gallery",
-      "contact",
-    ];
+  const sections = [
+    "home",
+    "about",
+    "leadership",
+    "projects",
+    "services",
+    "gallery",
+    "contact",
+  ];
 
-    const handleScroll = () => {
-      let current = "home";
+  let lastScrollY = window.scrollY;
 
-      sections.forEach((id) => {
-        const el = document.getElementById(id);
+  const handleScroll = () => {
+    let current = "home";
 
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          current = id;
-        }
-      });
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
 
-      setActive(current);
-    };
+      if (el && window.scrollY >= el.offsetTop - 120) {
+        current = id;
+      }
+    });
 
-    window.addEventListener("scroll", handleScroll);
+    setActive(current);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (window.scrollY < 100) {
+      setShowNavbar(true);
+    } else if (window.scrollY > lastScrollY) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+
+    lastScrollY = window.scrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const linkClass = (id: string) =>
   `transition-all duration-300 ${
@@ -44,8 +56,13 @@ export default function Navbar() {
   }`;
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#020617]/95 backdrop-blur-xl text-white border-b border-white/10 shadow-xl">
-
+    <nav
+  className={`fixed top-0 left-0 w-full z-50 bg-[#020617]/95 backdrop-blur-xl text-white border-b border-white/10 shadow-xl transition-all duration-500 ${
+    showNavbar
+      ? "translate-y-0 opacity-100"
+      : "-translate-y-full opacity-0"
+  }`}
+>
       {/* Orange Accent Line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-orange-500"></div>
 
