@@ -1387,7 +1387,7 @@ service.title === "Structural Works" || service.title === "Finishing Works"
         <p className="text-gray-300 leading-7">
           Tridev Technocrafts Pvt. Ltd.
           <br />
-          New Delhi, India
+         UGF, A-161, Gulab Bagh, Near Metro Pillar No-753, Uttam Nagar, Delhi- 110059
         </p>
       </div>
 
@@ -1397,11 +1397,8 @@ service.title === "Structural Works" || service.title === "Finishing Works"
   </h3>
 
   <div className="space-y-2 text-gray-300 text-sm md:text-base break-all">
-    <p>hemant.baaliyan@tridevtechno.in</p>
-     <p>dheerendra.awasthi@tridevtechno.in</p>
-    <p>rohit.saha@tridevtechno.in</p>
     <p>vipin.gupta@tridevtechno.in</p>
-    <p>sikadar.singh@tridevtechno.in</p>
+   
    
   </div>
 </div>
