@@ -402,7 +402,7 @@ useEffect(() => {
   {/* TOP CENTER CARD */}
   <div className="flex justify-center mb-10">
     <div className="max-w-4xl bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-10 hover:shadow-2xl transition">
-      <h3 className="text-2xl font-bold">Hemant Kumar</h3>
+      <h3 className="text-2xl font-bold">Hemant Baaliyan</h3>
       <p className="text-orange-400 mt-2">Managing Director</p>
       <p className="mt-6 text-gray-300 leading-relaxed">
         Graduate Engineer and MBA professional with 26+ years of experience in
