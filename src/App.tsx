@@ -23,10 +23,10 @@ import pic20 from "./assets/gallery/Picture20.jpg";
 
 
 
-
 export default function App() {
   const [current, setCurrent] = useState(0);
-  
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+const [touchEnd, setTouchEnd] = useState<number | null>(null);
 const [selectedService, setSelectedService] = useState<string | null>(null);
 
 
@@ -38,12 +38,11 @@ const [selectedService, setSelectedService] = useState<string | null>(null);
 ];
 useEffect(() => {
   const interval = setInterval(() => {
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev + 1) % images.length);
   }, 3000);
 
   return () => clearInterval(interval);
-}, []);
-
+}, [images.length]);
   const projects = [
   {
     client: "M3M India Pvt. Ltd.",
@@ -708,15 +707,33 @@ service.title === "Structural Works" || service.title === "Finishing Works"
       delivered across India.
     </p>
 
-    <div className="mt-12">
+    <div
+      className="mt-12"
+      onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
+      onTouchMove={(e) => setTouchEnd(e.targetTouches[0].clientX)}
+      onTouchEnd={() => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+
+        if (distance > 50) {
+          setCurrent((prev) => (prev + 1) % images.length);
+        }
+
+        if (distance < -50) {
+          setCurrent((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+          );
+        }
+      }}
+    >
       <img
         src={images[current]}
         alt="Project"
-        className="w-full h-[550px] object-cover rounded-3xl shadow-2xl border border-white/10"
+        className="w-full h-[300px] md:h-[550px] object-cover rounded-3xl shadow-2xl border border-white/10 transition-all duration-500"
       />
     </div>
 
-    {/* Navigation Dots */}
     <div className="flex justify-center gap-3 mt-8">
       {images.map((_, index) => (
         <button
@@ -732,7 +749,7 @@ service.title === "Structural Works" || service.title === "Finishing Works"
     </div>
 
   </div>
-</section>
+</section>  
 
 {selectedService === "elv" && (
   <div
