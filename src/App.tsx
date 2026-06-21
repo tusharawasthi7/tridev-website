@@ -211,47 +211,47 @@ useEffect(() => {
 >
           <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600')] bg-cover bg-center" />
 
-     <div className="relative max-w-7xl mx-auto px-10 lg:px-12 py-16 grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+     <div className="relative max-w-7xl mx-auto px-6 md:px-10 lg:px-12 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[80vh]">
 
             {/* LEFT */}
             <div>
-              <p className="uppercase tracking-widest text-orange-300 text-sm mb-4">
+             <p className="uppercase tracking-wider md:tracking-widest text-orange-300 text-xs md:text-sm mb-4">
                 Engineering • Construction • Infrastructure
               </p>
 
-              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-none">
                 TRIDEV
                 <span className="block text-orange-400">
                   TECHNOCRAFTS
                 </span>
               </h1>
 
-              <p className="mt-6 text-lg text-gray-200 max-w-xl">
+          <p className="mt-5 text-base md:text-lg text-gray-200 max-w-xl">
                 Delivering premium Civil, MEP, Infrastructure and Facility
                 Management solutions across India with a commitment to quality.
               </p>
 
-              <div className="mt-8 flex gap-4">
-                <a href="#projects" className="bg-orange-500 px-6 py-3 rounded-xl font-semibold">
+           <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="#projects" className="bg-orange-500 px-6 py-3 rounded-xl font-semibold text-center">
                   Explore Projects
                 </a>
-                <a href="#contact" className="border border-white/30 px-6 py-3 rounded-xl">
+                <a href="#contact" className="border border-white/30 px-6 py-3 rounded-xl text-center">
                   Contact Us
                 </a>
               </div>
             </div>
 
             {/* RIGHT STATS */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-3 md:gap-5">
               {[
                 ["21+", "Years of leadership experience"],
                 ["100+", "Skilled workforce members"],
                 ["2012", "Serving diversified sectors since"],
                 ["Pan India", "Project execution capability"],
               ].map(([title, desc]) => (
-                <div key={title} className="bg-white/10 backdrop-blur-md p-5 rounded-3xl border border-white/10">
+                <div key={title} className="bg-white/10 backdrop-blur-md p-4 md:p-5 rounded-3xl border border-white/10 min-h-[130px] md:min-h-[170px]">
                   <h3 className="text-3xl font-bold text-orange-400">{title}</h3>
-                  <p className="mt-2 text-gray-200">{desc}</p>
+                  <p className="mt-2 text-sm md:text-base text-gray-200">{desc}</p>
                 </div>
               ))}
             </div>
@@ -276,7 +276,7 @@ useEffect(() => {
 
       {/* Floating Stat */}
       <div className="absolute bottom-6 left-6 bg-black text-white px-6 py-4 rounded-2xl shadow-lg">
-        <p className="text-3xl font-bold text-orange-400">2012</p>
+        <p className="text-2xl md:text-3xl font-bold text-orange-400">2012</p>
         <p className="text-sm">Established</p>
       </div>
     </div>
